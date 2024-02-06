@@ -1,0 +1,6 @@
+@RarePublishing_HostAddress = http://localhost:5056
+
+GET {{RarePublishing_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
