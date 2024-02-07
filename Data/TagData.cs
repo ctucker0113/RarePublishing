@@ -1,6 +1,7 @@
-﻿namespace RarePublishing.Data
-{
-    public class TagData
-    {
-    }
-}
+﻿using RarePublishing.Models;
+
+namespace RarePublishing.Data;
+
+
+
+
