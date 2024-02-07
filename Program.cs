@@ -1,3 +1,5 @@
+using RarePublishing.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -16,5 +18,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 // Start Coding Here!
 
-Console.WriteLine("Hi!");
+
+Console.WriteLine("Hello!");
 app.Run();
