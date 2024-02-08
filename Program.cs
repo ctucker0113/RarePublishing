@@ -16,5 +16,4 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 // Start Coding Here!
 
-Console.WriteLine("Hi!");
 app.Run();
