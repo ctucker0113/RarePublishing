@@ -1,5 +1,5 @@
 ﻿using RarePublishing.Models;
-namespace RarePublishing.Data
+namespace RarePublishing.Data;
 
 
 public class CommentData {
@@ -41,5 +41,5 @@ public class CommentData {
             Content = "wait... what?!?!"
         }
     };
-}
+};
 
