@@ -1,21 +1,28 @@
-﻿using RarePublishing.Data;
+﻿
+using RarePublishing.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using RarePublishing.Models;
 
 namespace RarePublishing.Api
 {
-
-    public class RareUserApi
+    public static class RareUserApi
     {
-        public readonly UserData users;
-       
-        public void Map(WebApplication app)
+        public static void Map(WebApplication app)
         {
-            app.MapGet("/users", () =>
+            app.MapGet("/api/users", () =>
             {
-                return Results.Ok(users);
+                return UserData.users;
+            });
+
+            app.MapGet("/users/{id}", (int id) =>
+            {
+
+
+                return UserData.users;
+
             });
         }
     }
-       
-
 }
