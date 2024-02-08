@@ -2,27 +2,27 @@ using RarePublishing.Models;
 
 namespace RarePublishing.Api
 {
-    var builder = WebApplication.CreateBuilder(args);
+    
+
+}
+WebApplication builder = WebApplication.CreateBuilder(args);
 
 
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-    var app = builder.Build();
+var app = builder.Build();
 
-    // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 // Start Coding Here!
 
 
 app.Run();
-
-}
-
 
