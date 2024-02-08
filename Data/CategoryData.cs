@@ -4,7 +4,7 @@ namespace RarePublishing.Data
 {
     public class CategoryData
     {
-        List<Category> categories = new List<Category>();
+        List<Category> categories = new List<Category>()
         {
             new Category()
             {

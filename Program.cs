@@ -1,11 +1,6 @@
-using RarePublishing.Models;
+﻿using RarePublishing.Models;
 
-namespace RarePublishing.Api
-{
-    
-
-}
-WebApplication builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddEndpointsApiExplorer();
