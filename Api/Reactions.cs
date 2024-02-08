@@ -7,16 +7,16 @@ namespace RarePublishing.Data
     {
         public static void Map(WebApplication app)
         {
-            // GET all Reactions
+            // GET all Post Reactions
             app.MapGet("/reactions", () =>
             {
-                return reactions;
+                return ReactionsList.reactions;
             });
 
             // GET all reactions connected to a single ID
             app.MapGet("/reactions/{id}", (int id) =>
             {
-                Reaction reaction = reactions.FirstOrDefault(e => e.ID == id);
+                Reaction reaction = ReactionsList.reactions.FirstOrDefault(e => e.ID == id);
                 if (reaction == null)
                 {
                     return Results.NotFound();
