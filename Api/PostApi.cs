@@ -1,4 +1,5 @@
-﻿using RarePublishing.Models;
+﻿using RarePublishing.Data;
+using RarePublishing.Models;
 using System;
 using System.Linq;
 namespace RarePublishing.Api
