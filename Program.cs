@@ -1,3 +1,6 @@
+using RarePublishing.Api;
+using RarePublishing.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -14,6 +17,22 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-// Start Coding Here!
+app.MapControllers();
+app.UseAuthorization();
+
+
+CategoryApi.Map(app);
+CommentApi.Map(app);
+PostApi.Map(app);
+PostReactions.Map(app);
+PostTagsApi.Map(app);
+Reactions.Map(app);
+SubscriptionApi.Map(app);
+Tags.Map(app);
+RareUserApi.Map(app);
+
+
+
+
 
 app.Run();

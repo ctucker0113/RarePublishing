@@ -4,9 +4,9 @@ using RarePublishing.Models;
 namespace RarePublishing.Api
 {
 
-    public class CommentApi
+    public static class CommentApi
     {
-        public void Map(WebApplication app)
+        public static void Map(WebApplication app)
         {
             app.MapPost("/api/comments", (Comment comment) =>
             {
