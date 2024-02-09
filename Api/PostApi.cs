@@ -64,7 +64,7 @@ namespace RarePublishing.Api
             });
 
             //filter by category
-            app.MapGet("/api/posts/{catId}", (int catId) =>
+            app.MapGet("/api/posts/category/{catId}", (int catId) =>
             {
                 List<Post> filteredPosts = new List<Post>();
                 filteredPosts = PostData.posts.Where(p => p.CategoryId == catId).ToList();
@@ -82,7 +82,7 @@ namespace RarePublishing.Api
             });
 
             //filter by user
-            app.MapGet("/api/posts/{userId}", (int userId) =>
+            app.MapGet("/api/posts/user/{userId}", (int userId) =>
             {
                 List<Post> filteredPosts = PostData.posts.Where(p => p.UserId == userId).ToList();
                 
@@ -90,7 +90,7 @@ namespace RarePublishing.Api
             });
 
             //see subscribed
-            app.MapGet("/api/subscriptions/{userId}", (int userId) =>
+            app.MapGet("/api/subscriptions/user/{userId}", (int userId) =>
             {
                 List<Post> authorPosts = new();
                 List<Post> subscribedPosts = new();
