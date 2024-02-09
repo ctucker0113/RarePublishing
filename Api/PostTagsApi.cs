@@ -40,6 +40,19 @@ namespace RarePublishing.Api
                 PostTagData.postTags.Add(postTag);
                 return postTag;
             });
+            app.MapGet("/posts/{id}/postTags", (int id) =>
+            {
+                List<PostTag> postTagList = PostTagData.postTags.Where(pt => pt.PostId == id).ToList();
+                if (postTagList == null)
+                {
+                    return Results.NotFound(id);
+                }
+                foreach (PostTag postTag in postTagList)
+                {
+                    postTag.TagObject = TagData.tags.FirstOrDefault(t => t.Id == postTag.TagId);
+                }
+                return Results.Ok(postTagList);
+            });
 
 
 
