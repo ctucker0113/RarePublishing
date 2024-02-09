@@ -1,28 +1,28 @@
-﻿namespace RarePublishing.Models
-{
+﻿using RarePublishing.Models;
+
+namespace RarePublishing.Data;
     public class CategoryData
     {
-        public static List<Category> categories = new List<Category>()
+        public static List<Category> categories = new List<Category>
         {
-
-            new Category
-            {
+            new Category()
+        {
                 Id = 0,
-                Label = "Rant"
+                Label = "Rant",
             },
 
-            new Category
-            {
+            new Category()
+        {
                 Id = 1,
                 Label = "Props"
             },
 
-            new Category
-            {
+            new Category()
+        {
                 Id = 2,
                 Label = "Help!"
-            }
-
+            },
+    
         };
-    }
 };
+

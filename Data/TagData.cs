@@ -12,12 +12,12 @@ public class TagData
             },
             new Tag()
             {
-                Id = 1,
+                Id = 2,
                 Label = "label2",
             },
             new Tag()
             {
-                Id = 1,
+                Id = 3,
                 Label = "label3",
             },
         };

@@ -17,8 +17,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapControllers();
-app.UseAuthorization();
 
 
 CategoryApi.Map(app);
