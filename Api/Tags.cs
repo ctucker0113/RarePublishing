@@ -39,6 +39,21 @@ namespace RarePublishing.Api
                 TagData.tags.Add(tag);
                 return tag;
             });
+            app.MapPut("/api/tags/update{id}", (int id, Tag tag) =>
+            {
+                Tag tagToUpdate = TagData.tags.FirstOrDefault(t => t.Id == id);
+                int tagIndex = TagData.tags.IndexOf(tagToUpdate);
+                if (tagToUpdate == null)
+                {
+                    return Results.NotFound();
+                }
+                if (id != tag.Id)
+                {
+                    return Results.BadRequest();
+                }
+                TagData.tags[tagIndex] = tag;
+                return Results.Ok(tag);
+            });
 
 
 
