@@ -14,6 +14,16 @@ namespace RarePublishing.Api
                 CommentData.comments.Add(comment);
                 return comment;
             });
+
+            app.MapGet("/api/comments/{id}", (int id) =>
+            {
+                List<Comment> commentsbypost = CommentData.comments.Where(x => x.PostId == id).ToList();
+                if (commentsbypost == null)
+                {
+                    return Results.NotFound();
+                }
+                return Results.Ok(commentsbypost);
+            });
         }
     }
 };
