@@ -1,11 +1,11 @@
 ﻿using RarePublishing.Models;
 
-namespace RarePublishing.Data
-{
+namespace RarePublishing.Data;
+
     public class UserData
     {
 
-        public static List<User> users = new List<Users>
+        public static List<User> users = new List<User>
         {
             new User() {Id=0, FirstName= "Tom", LastName="Jones", Email="tomjones@raptor.com", Bio="Singer", UserName="TJonesSings1", Password = "S1ng3r1", ProfileImageUrl="", CreatedOn="2015, 11, 17", Active=true},
             new User() {Id=1, FirstName="James", LastName="Madison",Email="jmadison@raptor.com", Bio="Historian", UserName="JMadisonHistory", Password="JMHistory1", ProfileImageUrl="",CreatedOn="2023, 8, 23", Active=false},
@@ -16,7 +16,7 @@ namespace RarePublishing.Data
 
     };
 
-}
+
 
 
 

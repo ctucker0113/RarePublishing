@@ -1,6 +1,7 @@
 ﻿using RarePublishing.Models;
+using RarePublishing.Data;
 
-namespace RarePublishing.Data
+namespace RarePublishing.Api
 {
     public static class PostReactions
     {
