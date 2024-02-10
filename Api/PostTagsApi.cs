@@ -8,11 +8,11 @@ namespace RarePublishing.Api
         public static void Map(WebApplication app)
         {
 
-            app.MapGet("/postTags", () =>
+            app.MapGet("/api/postTags", () =>
             {
                 return PostTagData.postTags;
             });
-            app.MapGet("/postTags/{id}", (int id) =>
+            app.MapGet("/api/postTags/{id}", (int id) =>
             {
                 PostTag thisPostTag = PostTagData.postTags.FirstOrDefault(x => x.Id == id);
                 if (thisPostTag == null)
@@ -22,7 +22,7 @@ namespace RarePublishing.Api
                 thisPostTag.TagObject = TagData.tags.FirstOrDefault(t => t.Id == thisPostTag.TagId);
                 return Results.Ok(thisPostTag);
             });
-            app.MapDelete("/postTags/delete/{id}", (int id) =>
+            app.MapDelete("/api/postTags/delete/{id}", (int id) =>
             {
                 PostTag thisPostTag = PostTagData.postTags.FirstOrDefault(t => t.Id == id);
                 if (thisPostTag == null)
@@ -34,13 +34,13 @@ namespace RarePublishing.Api
             });
 
           
-            app.MapPost("/postTags/new", (PostTag postTag) =>
+            app.MapPost("/api/postTags/new", (PostTag postTag) =>
             {
                 postTag.Id = PostTagData.postTags.Max(t => t.Id) + 1;
                 PostTagData.postTags.Add(postTag);
                 return postTag;
             });
-            app.MapGet("/posts/{id}/postTags", (int id) =>
+            app.MapGet("/api/posts/{id}/postTags", (int id) =>
             {
                 List<PostTag> postTagList = PostTagData.postTags.Where(pt => pt.PostId == id).ToList();
                 if (postTagList == null)
@@ -53,7 +53,7 @@ namespace RarePublishing.Api
                 }
                 return Results.Ok(postTagList);
             });
-            app.MapGet("/posts/{id}/tags", (int id) =>
+            app.MapGet("/api/posts/{id}/tags", (int id) =>
             {
                 List<Tag> filteredTags = new List<Tag>();
                 List<PostTag> postTagList = PostTagData.postTags.Where(pt => pt.PostId == id).ToList();
