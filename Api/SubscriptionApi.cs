@@ -42,7 +42,7 @@ namespace RarePublishing.Api
             //get all user's followers
             app.MapGet("/api/subscriptions/followers/{userId}", (int userId) =>
             {
-                List<User> followers = new ();
+                List<Users> followers = new ();
                 List<Subscription> userFollows = SubscriptionData.subscriptions.Where(s => s.AuthorId == userId).ToList();
                 if (userFollows == null)
                 {

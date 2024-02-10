@@ -1,4 +1,4 @@
-using RarePublishing.Api;
+﻿using RarePublishing.Api;
 using RarePublishing.Data;
 
 var builder = WebApplication.CreateBuilder(args);
