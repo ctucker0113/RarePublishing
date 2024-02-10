@@ -9,21 +9,12 @@ namespace RarePublishing.Api
         public static void Map(WebApplication app)
         {
             //get user's subscriptions
-            app.MapGet("/api/subscriptions/{id}", (int id) =>
+            app.MapGet("/api/subscriptions/{userId}", (int userId) =>
             {
-                List<Post> userSubs = new List<Post>();
-                List<Subscription> followerList = SubscriptionData.subscriptions.Where(s => s.FollowerId == id).ToList();
-                if (followerList == null)
+                List<Subscription> userSubs = SubscriptionData.subscriptions.Where(s => s.FollowerId == userId).ToList();
+                if (userSubs == null)
                 {
                     Results.NotFound();
-                }
-                
-                List<int> authorList = followerList.Select(f => f.AuthorId).ToList();
-                foreach (int authorId in authorList)
-                {
-                    Post authorPost = PostData.posts.FirstOrDefault(p => p.UserId == authorId);
-                    userSubs.Add(authorPost);
-
                 }
                 return userSubs;
             });
