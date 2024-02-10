@@ -8,38 +8,38 @@ public static class CommentData
 {
         new Comment
         {
+            Id = 0,
+            AuthorId = 0,
+            PostId = 0,
+            Content = "Oh wow! I love these poems!"
+        },
+        new Comment
+        {
             Id = 1,
             AuthorId = 1,
             PostId = 1,
-            Content = "Oh wow! I can't believe"
+            Content = "Theres NO way!!!"
         },
         new Comment
         {
             Id = 2,
             AuthorId = 2,
             PostId = 2,
-            Content = "Theres NO way!!!"
+            Content = "Can't believe this!"
         },
         new Comment
         {
             Id = 3,
             AuthorId = 3,
             PostId = 3,
-            Content = "They did WHAT???"
+            Content = "Let's go!"
         },
         new Comment
         {
             Id = 4,
             AuthorId = 4,
-            PostId = 4,
-            Content = "No one is gonna believe this when I tell my friends!"
-        },
-        new Comment
-        {
-            Id = 5,
-            AuthorId = 5,
-            PostId = 5,
-            Content = "wait... what?!?!"
+            PostId = 0,
+            Content = "So good!"
         }
     };
 };
