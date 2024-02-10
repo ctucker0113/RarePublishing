@@ -53,6 +53,25 @@ namespace RarePublishing.Api
                 }
                 return Results.Ok(postTagList);
             });
+            app.MapGet("/posts/{id}/tags", (int id) =>
+            {
+                List<Tag> filteredTags = new List<Tag>();
+                List<PostTag> postTagList = PostTagData.postTags.Where(pt => pt.PostId == id).ToList();
+                if (postTagList == null)
+                {
+                    return Results.NotFound(id);
+                }
+               
+                foreach (PostTag postTag in postTagList)
+                {
+                    Tag singleTagObj = TagData.tags.FirstOrDefault(t => t.Id == postTag.TagId);
+                    filteredTags.Add(singleTagObj);
+                    
+
+                }
+                
+                return Results.Ok(filteredTags);
+            });
 
 
 
