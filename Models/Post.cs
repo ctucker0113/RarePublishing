@@ -11,7 +11,7 @@
         public string Content { get; set; }
         public bool Approved { get; set; }
 
-
+        public Tag TagObj { get; set; }
 
     }
 }

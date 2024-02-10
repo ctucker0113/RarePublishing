@@ -32,10 +32,7 @@ namespace RarePublishing.Api
                 return Results.Ok(thisTag);
             });
 
-            app.MapPost("/tags", () =>
-            {
-                return TagData.tags;
-            });
+            
             app.MapPost("/tags/new", (Tag tag) =>
             {
                 tag.Id = TagData.tags.Max(t => t.Id) + 1;

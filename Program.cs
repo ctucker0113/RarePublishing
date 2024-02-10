@@ -1,7 +1,19 @@
 using RarePublishing.Api;
 using RarePublishing.Data;
 
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                      });
+});
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -17,6 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(MyAllowSpecificOrigins);
 
 
 CategoryApi.Map(app);
